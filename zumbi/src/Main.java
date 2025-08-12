@@ -43,30 +43,19 @@ public class Main {
         do{
             System.out.println("*------------------------------------------------------------------*");
             System.out.println("|                                                                  |");
-            System.out.println("|   1 - Mostar nome do primeiro zumbi                              |");
-            System.out.println("|   2 - Mostrar nome do segundo zumbi                              |");
-            System.out.println("|   3 - Mostrar vida do primeiro zumbi                             |");
-            System.out.println("|   4 - Mostrar vida do segundo zumbi                              |");
-            System.out.println("|   5 - Transferir vida do primeiro zumbi para o segundo           |");
-            System.out.println("|   6 - Transferir vida do segundo zumbi para o primeiro           |");
-            System.out.println("|   7 - Encerrar programa                                          |");
+            System.out.println("|   1 - Mostar info dos zumbis                                     |");
+            System.out.println("|   2 - Transferir vida do primeiro zumbi para o segundo           |");
+            System.out.println("|   3 - Transferir vida do segundo zumbi para o primeiro           |");
+            System.out.println("|   4 - Encerrar programa                                          |");
             System.out.println("|                                                                  |");
             System.out.println("*------------------------------------------------------------------*");
             opcao = input.nextInt();
 
             if(opcao == 1){
-                System.out.println("O nome do primeiro zumbi é: " +  zumbi1.nome);
+                System.out.println("O nome do primeiro zumbi é: " +  zumbi1.nome + "|   HP: " + zumbi1.vida);
+                System.out.println("O nome do primeiro zumbi é: " +  zumbi2.nome + "|   HP: " + zumbi2.vida);
             }
             else if(opcao == 2){
-                System.out.println("O nome do segundo zumbi é: " + zumbi2.nome);
-            }
-            else if(opcao == 3){
-                System.out.println("A vida do primeiro zumbi é: " + zumbi1.mostrarVida());
-            }
-            else if(opcao == 4){
-                System.out.println("A vida do segundo zumbi é: " + zumbi2.mostrarVida());
-            }
-            else if(opcao == 5){
                 System.out.println("Quantidade de vida que deseja transferir: ");
                 quantidade = input.nextInt();
                 if(quantidade > 0){
@@ -80,7 +69,7 @@ public class Main {
                     zumbi2.transferirVida(zumbi1, quantidade);
                 }
             }
-        }while(opcao != 7);
+        }while(opcao != 4);
 
         input.close();
     }
