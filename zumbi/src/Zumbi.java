@@ -1,14 +1,27 @@
 public class Zumbi {
+
+    // atributos
     double vida;
     String nome;
 
-    public double mostrarVida(){
+    // metodos
+
+     double mostrarVida(){
 
         return vida;
     }
 
-    public void transferirVida(Zumbi zumbiAlvo, double quantia){
+     void transferirVida(Zumbi zumbiAlvo, double quantia){
         vida -= quantia;
         zumbiAlvo.vida += quantia;
+    }
+
+    boolean verificTransfVida(Zumbi zumbiAgressor, Zumbi zumbiCobaia){
+         if(zumbiAgressor ==  zumbiCobaia){
+             return false;
+         }
+         else{
+             return true;
+         }
     }
 }
