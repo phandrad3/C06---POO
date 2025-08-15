@@ -70,12 +70,11 @@ public class Main {
         kart.piloto = piloto;
         kart2.piloto = piloto2;
 
-        // valores nos atributos do piloto
+        // valores nos atributos do kart
         kart.nome = "Capotis";
         kart.motor.cilindradas = "150";
         kart.motor.velocidadeMaxima = 150;
 
-        // valores nos atributos do kart
         kart2.nome = "Relâmpago";
         kart2.motor.cilindradas = "50";
         kart2.motor.velocidadeMaxima = 0;
