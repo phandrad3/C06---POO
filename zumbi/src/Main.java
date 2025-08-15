@@ -42,6 +42,7 @@ public class Main {
         Zumbi zumbi1 = new Zumbi();
         Zumbi zumbi2 = new Zumbi();
         int opcao;
+        int parada;
         int quantidade;
         boolean verificacao;
 
@@ -68,13 +69,13 @@ public class Main {
             System.out.println("|   4 - Encerrar programa                                          |");
             System.out.println("|                                                                  |");
             System.out.println("*------------------------------------------------------------------*");
-            opcao = input.nextInt();
+            parada = input.nextInt();
 
-            if(opcao == 1){
+            if(parada == 1){
                 System.out.println("O nome do primeiro zumbi é: " +  zumbi1.nome + "|   HP: " + zumbi1.vida);
                 System.out.println("O nome do segundo zumbi é: " +  zumbi2.nome + "|   HP: " + zumbi2.vida);
             }
-            else if(opcao == 2){
+            else if(parada == 2){
                 verificacao = zumbi1.verificTransfVida(zumbi1, zumbi2);
                 if(verificacao){
                     System.out.println("Para qual zumbi deseja transferir a vida? (1/2)");
@@ -95,13 +96,13 @@ public class Main {
                 }
 
             }
-            else if(opcao == 3){
+            else if(parada == 3){
                 zumbi1 = zumbi2;
                 System.out.println("Digite uma nova quantidade de vida: ");
                 quantidade = input.nextInt();
                 zumbi1.vida = quantidade;
             }
-        }while(opcao != 4);
+        }while(parada != 4);
 
         input.close();
     }
