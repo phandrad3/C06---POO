@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*      Exercício 6
 
      Crie classes em Java que atendam as especificações UML abaixo
@@ -38,6 +36,9 @@ import java.util.Scanner;
     *----------------------------------------*
 
  */
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
