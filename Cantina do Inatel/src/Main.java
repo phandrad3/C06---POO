@@ -1,4 +1,4 @@
-/*      Exercício 6
+/*      Exercício 7
 
      Crie classes em Java que atendam as especificações UML abaixo
     Crie uma classe Main e, nela, crie:
@@ -16,7 +16,7 @@
     |----------------------------------------|
     |   + nome: String                       |
     |----------------------------------------|
-    |   + soltaSuperPoder()                  |
+    |                                        |
     *----------------------------------------*
                        |
                        |
@@ -31,8 +31,6 @@
     |   + Nome: String                       |
     |--------------------------------- ------|
     |   + addSalgado(Salgado novoSalvado)    |
-    |   + soltarTurbo()                      |
-    |   + fazerDrift()                       |
     *----------------------------------------*
 
  */
@@ -60,11 +58,12 @@ public class Main {
             System.out.println("|                                                                  |");
             System.out.println("*------------------------------------------------------------------*");
             parada = input.nextInt();
+            input.nextLine();
 
             switch(parada){
                 case 1:
                     System.out.println("Digite o nome do salgado: ");
-                    nome = input.next();
+                    nome = input.nextLine();
                     Salgado salgado = new Salgado();
                     salgado.nome = nome;
                     cantina.addSalgado(salgado);
