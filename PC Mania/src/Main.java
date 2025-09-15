@@ -10,11 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite seu nome: ");
-        String nomeCliente = scanner.nextLine();
-        System.out.print("Digite seu cpf: ");
-        String cpfCliente = scanner.nextLine();
-        Cliente cliente = new Cliente(nomeCliente, cpfCliente);
+        Cliente cliente = new Cliente("Ph", "123.456.789");
 
         MemoriaUSB memoria1 = new MemoriaUSB("Pen-Drive 16GB", 16);
         SistemaOperacional sistemaoperacional1 = new SistemaOperacional("macOS", 64);
