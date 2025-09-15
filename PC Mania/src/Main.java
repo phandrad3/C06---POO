@@ -1,11 +1,10 @@
-// main
 // Pedro Henrique de Paula Andrade - GES - 368
-import br.com.inatel.Clientes.Cliente;
-import br.com.inatel.Computadores.Computador;
-import br.com.inatel.Computadores.HardwareBasico;
-import br.com.inatel.Computadores.MemoriaUSB;
-import br.com.inatel.Computadores.SistemaOperacional;
-import br.com.inatel.Clientes.ProcessarPedido;
+import br.inatel.Clientes.Cliente;
+import br.inatel.Computadores.Computador;
+import br.inatel.Computadores.HardwareBasico;
+import br.inatel.Computadores.MemoriaUSB;
+import br.inatel.Computadores.SistemaOperacional;
+import br.inatel.Clientes.ProcessarPedido;
 import java.util.Scanner;
 
 public class Main {
@@ -49,7 +48,6 @@ public class Main {
 
         int opcao;
         do {
-
             System.out.println("\n*------------------*");
             System.out.println("|                  |");
             System.out.println("|  PC MANIA STORE  |");
@@ -94,16 +92,36 @@ public class Main {
             scanner.nextLine();
 
             if (opcao == 1) {
-                cliente.adicionarComputador(promocao1);
-                System.out.println("\nComputador Apple adicionado ao carrinho!");
+                Computador[] comps = cliente.getComputadores();
+                int qtd = cliente.getQtdComputadores();
+                if (qtd < comps.length) {
+                    comps[qtd] = promocao1;
+                    cliente.setQtdComputadores(qtd + 1);
+                    System.out.println("\nComputador Apple adicionado ao carrinho!");
+                } else {
+                    System.out.println("\nLimite de computadores atingido!");
+                }
             } else if (opcao == 2) {
-                cliente.adicionarComputador(promocao2);
-                System.out.println("\nComputador Samsung adicionado ao carrinho!");
+                Computador[] comps = cliente.getComputadores();
+                int qtd = cliente.getQtdComputadores();
+                if (qtd < comps.length) {
+                    comps[qtd] = promocao2;
+                    cliente.setQtdComputadores(qtd + 1);
+                    System.out.println("\nComputador Samsung adicionado ao carrinho!");
+                } else {
+                    System.out.println("\nLimite de computadores atingido!");
+                }
             } else if (opcao == 3) {
-                cliente.adicionarComputador(promocao3);
-                System.out.println("\nComputador Dell adicionado ao carrinho!");
+                Computador[] comps = cliente.getComputadores();
+                int qtd = cliente.getQtdComputadores();
+                if (qtd < comps.length) {
+                    comps[qtd] = promocao3;
+                    cliente.setQtdComputadores(qtd + 1);
+                    System.out.println("\nComputador Dell adicionado ao carrinho!");
+                } else {
+                    System.out.println("\nLimite de computadores atingido!");
+                }
             } else if (opcao == 0) {
-
                 if (cliente.getQtdComputadores() < 2) {
                     System.out.println("\n*------------------*");
                     System.out.println("|                  |");
@@ -140,18 +158,24 @@ public class Main {
         for (int i = 0; i < qtdComputadores; i++) {
             System.out.println("\n*------------------*");
             System.out.println("|                  |");
-            System.out.println("|  COMPUTADOR " + (i + 1) + "    |");
+            System.out.println("|  COMPUTADOR " + (i + 1) + "     |");
             System.out.println("|                  |");
             System.out.println("*------------------*");
             computadoresCliente[i].mostraPCConfigs();
         }
 
-        System.out.println("\n*---------------------*");
-        System.out.println("|                     |");
-        System.out.println("|  TOTAL: R$ " + cliente.calculaTotalCompra() + "  ped |");
-        System.out.println("|                     |");
-        System.out.println("*---------------------*");
+        System.out.println("\n*------------------*");
+        System.out.println("|                  |");
+        System.out.println("|  TOTAL DA        |");
+        System.out.println("|  COMPRA: R$ " + cliente.calculaTotalCompra() + " |");
+        System.out.println("|                  |");
+        System.out.println("*------------------*");
 
+        System.out.println("\n*------------------*");
+        System.out.println("|                  |");
+        System.out.println("|  PROCESSANDO...  |");
+        System.out.println("|                  |");
+        System.out.println("*------------------*");
         ProcessarPedido.processar(computadoresCliente);
 
         scanner.close();
